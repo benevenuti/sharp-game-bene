@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="theme-color" content="#FFF">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilo.css">
+
+        <title>SharpGame</title>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="js/jquery-tiny-pubsub.js"></script>
+
+    </head>
+
+    <body class="general-container">
+
+        <!-- header -->
+        <nav class="navbar navbar-default js-header">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="#">
+                        #
+                    </a>
+
+                </div> <!-- ./navbar-header -->             
+
+            </div>
+        </nav>
+        <!-- ./header -->
+
+        <!-- container de usuarios -->
+        <section class="userlist-container js-userlist-container content-wrapper">
+
+        </section>
+
+        <!-- container de jogo -->
+        <section class="hidden game-container js-game-container content-wrapper">
+
+        </section>
+
+        <!-- footer -->
+        <nav class="navbar navbar-default footer-main js-footer">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <span class="username-container js-container-link-username">
+                        Olá, <a href="#" class="js-show-username"></a>!
+                    </span>
+
+                    <div class="hidden container-fluid update-name-container js-form-update-name">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <form class="js-form-change-name">
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control js-input-update-username" maxlength="40" required>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-default">Alterar</button>
+                                    <button type="button" class="btn btn-danger pull-right js-btn-cancel">Cancelar</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </nav>
+
+
+
+        <!-- template de button para iniciar jogo -->
+        <script id="template-btn-start-game" type="text/template">
+            <div class="btn-start-game-wrapper">
+                <button type="button" class="btn btn-primary btn-block js-btn-startgame">
+                    {{userName}}
+                </button>
+            </div>
+        </script>
+
+        <!-- template de novo jogo -->
+        <script id="template-new-game" type="text/template">
+            <div class="btn-game js-btn-game" data-value="1"></div>
+            <div class="btn-game js-btn-game" data-value="2"></div>
+            <div class="btn-game js-btn-game" data-value="4"></div>
+            <div class="btn-game js-btn-game" data-value="8"></div>
+            <div class="btn-game js-btn-game" data-value="16"></div>
+            <div class="btn-game js-btn-game" data-value="32"></div>
+            <div class="btn-game js-btn-game" data-value="64"></div>
+            <div class="btn-game js-btn-game" data-value="128"></div>
+            <div class="btn-game js-btn-game" data-value="256"></div>
+
+            <div class="text-center well well-sm">
+                <div class="your-turn">
+                    Sua vez
+                </div>
+                <div class="wait-oponent">
+                    Aguarde
+                </div>
+            </div>
+            
+        </script>
+
+        <script src="js/Model.js"></script>
+        <script src="js/View.js"></script>
+        <script src="js/Controller.js"></script>
+        <script src="js/SharpGameMain.js"></script>
+
+    </body>
+</html>
