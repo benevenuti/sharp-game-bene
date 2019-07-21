@@ -13,7 +13,7 @@ function Model() {
 
 Model.prototype.init = function () {
     // instancia o socket
-    this.socket = io('http://localhost:3000/');
+    this.socket = io('https://sharp-game-bene.herokuapp.com/');
 
     // evento de conexao
     this.socket.on('connection', this.userConnected.bind(this));
